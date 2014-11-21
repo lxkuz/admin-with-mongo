@@ -1,14 +1,14 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-set :application, 'kemerovo-invest-portal'
-set :repo_url, 'git@bitbucket.org:mystand/kemerovo-invest.git'
+set :application, 'admin-with-mongo'
+set :repo_url, 'git@bitbucket.org:mystand/admin-with-mongo.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, "/srv/clients/#{fetch(:application)}/repository2"
+set :deploy_to, "/srv/clients/#{fetch(:application)}/repository"
 
 # Default value for :scm is :git
 set :scm, :git
@@ -22,7 +22,7 @@ set :scm, :git
 # Default value for :pty is false
 # set :pty, true
 
-set :linked_files, %w(config/config.yml config/mongoid.yml config/secrets.yml config/unicorn.rb config/mysql.yml)
+set :linked_files, %w(config/config.yml config/mongoid.yml config/secrets.yml config/unicorn.rb)
 
 set :linked_dirs, %w(log public/assets public/uploads)
 
@@ -33,7 +33,7 @@ set :linked_dirs, %w(log public/assets public/uploads)
 # set :keep_releases, 5
 
 set :rvm_type, :system
-set :rvm_ruby_version, '2.1.0'
+set :rvm_ruby_version, '2.1.5'
 # set :bundle_path, -> { shared_path.join('bundle') }  # this is default
 
 namespace :deploy do

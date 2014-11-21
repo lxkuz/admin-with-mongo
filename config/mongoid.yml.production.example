@@ -1,0 +1,8 @@
+production:
+  sessions:
+    default:
+      database: admin-with-mongo
+      hosts:
+        - localhost:27017
+      username: 'admin-with-mongo'
+      password: '0f0c1f3dbc466722e6780704bd9311e0db025ba1d5ea463cace31c9a0723294173ff77afa39d14438c1b87ccb5582ba0180f8d33c38f5f90258621a2a7b99aa5'
