@@ -37,7 +37,8 @@ class Page
   private
 
   def make_section
-    Section.create parent_id: @parent_id, title: title, page: self, kind: 'page'
+    id = @parent_id.blank? ? Section.root.id.to_s : @parent_id
+    Section.create parent_id: id, title: title, page: self, kind: 'page'
   end
 
   def update_section
