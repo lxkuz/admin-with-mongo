@@ -8,9 +8,7 @@ Dragonfly.app.configure do
 
   url_format '/media/:job/:name'
 
-  datastore :file,
-    root_path: Rails.root.join('public/uploads', Rails.env),
-    server_root: Rails.root.join('public')
+  datastore :file, root_path: Rails.root.join('public/uploads', Rails.env), server_root: Rails.root.join('public')
 
   # processors
   processor :large do |content|

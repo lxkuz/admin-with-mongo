@@ -16,7 +16,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 # Embed the V8 Javascript Interpreter into Ruby
 gem 'therubyracer', platforms: :ruby
-gem 'mysql2'
 
 ## Basic
 
@@ -33,8 +32,6 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'font-awesome-sass'
 # Parse CSS and add vendor prefixes to rules by Can I Use https://twitter.com/autoprefixer
 gem 'autoprefixer-rails'
-# Quiet Assets turns off the Rails asset pipeline log.
-gem 'quiet_assets'
 
 ## Database
 
