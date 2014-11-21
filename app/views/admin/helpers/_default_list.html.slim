@@ -1,0 +1,26 @@
+.ibox-content
+  .project-list
+    - if collection.blank?
+      = t('helpers.not_found')
+    - else
+      table.table.table-hover
+        tbody
+          - collection.each do |resource|
+            tr
+              td.project-status == render_badge resource.published, :published
+              td.project-title
+                = link_to url_for([:edit, :admin, resource]) do
+                  = resource.try(:title) || resource.try(:name)
+                br
+                small = l resource.c_at, format: :short
+              td.project-actions
+                = link_to url_for([:edit, :admin, resource]), class: 'btn btn-white btn-sm' do
+                  i.fa.fa-pencil
+                  | &nbsp
+                  = t('helpers.edit')
+                | &nbsp
+                = link_to url_for([:admin, resource]), class: 'btn btn-white btn-sm', method: :delete, data: { confirm: t('messages.destroy_confirm') } do
+                  i.fa.fa-trash
+                  | &nbsp
+                  = t('helpers.delete')
+  == paginate collection, views_prefix: 'admin/'

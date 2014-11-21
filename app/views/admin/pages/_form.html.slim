@@ -1,0 +1,19 @@
+= simple_form_for [:admin, @page], html: { class: 'form-horizontal localized-form' }, wrapper_mappings: { boolean: :horizontal_boolean } do |f|
+  = f.hidden_field :parent_id
+  .form-inputs
+    == render partial: 'admin/helpers/locale_selectors'
+    = f.input :title, required: true, as: :localized_string
+    .hr-line-dashed
+    = f.input :intro, as: :localized_text
+    .hr-line-dashed
+    = f.input :css_class
+    .hr-line-dashed
+    = f.input :content, as: :localized_imperavi
+    .hr-line-date
+    = f.input :published, as: :boolean
+    .hr-line-dashed
+  .form-group
+    .col-sm-4.col-sm-offset-2
+      = link_to t('helpers.cancel'), admin_sections_path, class: 'btn btn-white'
+      | &nbsp
+      = f.button :submit

@@ -1,0 +1,6 @@
+class ChosenInput
+  constructor: (el)->
+    @el = $ el 
+    @el.chosen(placeholder_text_single: "<%= I18n.t('messages.chosen_placeholder')%>", placeholder_text_multiple: "<%= I18n.t('messages.chosen_placeholder')%>", allow_single_deselect: true)
+
+window.addComponent ChosenInput, className: 'chosen-input'

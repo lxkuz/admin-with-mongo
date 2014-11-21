@@ -1,0 +1,33 @@
+.pagination
+  margin: 30px 0 0 0 
+  
+  .first, .last
+    a
+      border: solid 1px #D4D5D5
+      padding: 7px 12px
+      color: #A2A2A2
+      text-decoration: none
+      &:hover
+        color: #595B5F
+        border: solid 1px #595B5F
+  .page
+    display: inline-block
+
+    a
+      display: block
+
+      &:link, &:visited
+        border: solid 1px #d4d5d5
+        padding: 7px 12px
+        text-decoration: none
+        color: #a2a2a2
+      &:hover, &:active
+        border: solid 1px #595b5f
+        color: #595b5f
+        transition: all 0.2s ease
+
+    &.current
+      padding: 7px 12px
+      border: solid 1px #595b5f
+      background: #595b5f
+      color: #fff

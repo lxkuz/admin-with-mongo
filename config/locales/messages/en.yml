@@ -1,0 +1,9 @@
+en:
+  messages:
+    chosen_placeholder: Select from the list
+    destroy_confirm: 'Are You sure?'
+    not_found: Not found
+  mongoid:
+    errors:
+      messages:
+        blank_in_locale: can't be blank

@@ -1,0 +1,42 @@
+.localized-field
+  display: none
+
+  &[localize-view='left']
+    float: left
+    display: block
+
+  &[localize-view='right']
+    float: right
+    display: block
+
+.locale-selector
+  height: 30px
+  border: 2px solid #1AB394
+  padding: 0px 7px
+  width: 150px
+  option[disabled='disabled']
+    background: #e2e2e2
+.localized-row
+  .col-lg-6 
+    width: 100%
+
+.localized-field[localize-view='right'] 
+  display: none
+
+.translator-mode
+  .on
+    display: inline
+  .off 
+    display: none 
+
+body.translate-on
+  .localized-form
+    .col-lg-6 
+      width: 50% 
+  .localized-field[localize-view='right'] 
+    display: block  
+  .translator-mode
+    .on
+      display: none
+    .off
+      display: inline  

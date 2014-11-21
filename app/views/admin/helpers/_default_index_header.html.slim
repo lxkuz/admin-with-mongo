@@ -1,0 +1,24 @@
+.ibox-header
+  .row.m-b-sm.m-t-sm
+    .col-md-4
+      = form_tag nil, class: 'input-group', method: :get do
+        = text_field_tag :query, nil, value: params[:query], placeholder: t('helpers.search_placeholder'), class: 'input input-sm form-control'
+        span.input-group-btn
+          = submit_tag t('helpers.search'), class: 'button btn btn-sm btn-primary'
+    .col-md-5.ordering-list
+      strong = t('helpers.sort')
+      | &nbsp
+      .btn-group
+        - sort_fields.each do |field|
+          == render_sort_button field
+    .col-md-3
+      .ibox-tools 
+        = link_to url_for(controller: controller_name, action: :new), class: 'btn btn-primary btn-sm' do
+          i.fa.fa-plus
+          | &nbsp
+          = t('helpers.add')
+      .ibox-tools 
+        = link_to url_for(controller: controller_name, action: :index), class: 'btn btn-white btn-sm' do
+          i.fa.fa-refresh
+          | &nbsp
+          = t('helpers.clear')

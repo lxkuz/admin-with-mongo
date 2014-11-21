@@ -1,0 +1,36 @@
+doctype 5
+html lang=locale
+  head
+    title = content_for?(:title) ? yield(:title) : "#{@settings.title} #{@settings.subtitle}"
+    = favicon_link_tag 'favicon.ico', rel: 'shortcut icon', type: 'image/ico'
+    meta charset="utf-8"
+    = stylesheet_link_tag :admin, media: 'all', 'data-turbolinks-track' => true
+    == yield :css if content_for? :css
+    /[if IE] 
+      = stylesheet_link_tag 'admin/ie7/font-awesome-ie7.min', media: 'all', 'data-turbolinks-track' => true
+      meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1.0" name="viewport"
+    = csrf_meta_tags
+  body
+    #wrapper
+      nav.navbar-default.navbar-static-side role="navigation"
+        .sidebar-collapse
+          == render 'admin/navigation/admin_menu'
+    #page-wrapper.gray-bg
+      .row.border-bottom
+        nav.navbar.navbar-static-top role="navigation" style="margin-bottom: 0"
+          .navbar-header
+            a.navbar-minimalize.minimalize-styl-2.btn.btn-primary href="#"
+              i.fa.fa-bars
+            .btn.btn-primary.btn-sm.minimalize-styl-2.translator-mode
+              span.on = t('helpers.translator_mode_on')
+              span.off = t('helpers.translator_mode_off')
+          ul.nav.navbar-top-links.navbar-right
+            li
+              span.m-r-sm.text-muted.welcome-message = current_user.email
+            li = link_to destroy_user_session_path, method: :delete do
+              i.fa.fa-sign-out
+              = t('helpers.logout')
+      == yield
+    = javascript_include_tag :admin, 'data-turbolinks-track' => true
+    == yield :javascript if content_for? :javascript

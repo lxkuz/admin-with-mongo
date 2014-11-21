@@ -1,0 +1,9 @@
+ru:
+  messages:
+    chosen_placeholder: Выберите из списка
+    destroy_confirm: 'Вы уверены, что хотите удалить эту запись?'
+    not_found: Не найдено
+  mongoid:
+    errors:
+      messages:
+        blank_in_locale: не может быть пустым

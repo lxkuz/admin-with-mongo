@@ -1,0 +1,13 @@
+= simple_form_for [:admin, @user], html: { class: 'form-horizontal' }, wrapper_mappings: { boolean: :horizontal_boolean } do |f|
+  .form-inputs
+    = f.input :email
+    .hr-line-dashed
+    = f.input :password
+    .hr-line-date
+    = f.input :password_confirmation
+    .hr-line-dashed
+  .form-group
+    .col-sm-4.col-sm-offset-2
+      = link_to t('helpers.cancel'), admin_users_path, class: 'btn btn-white'
+      | &nbsp
+      = f.button :submit

@@ -1,0 +1,62 @@
+#platform
+  padding: 0 0 30px 0
+
+  .heading
+    overflow: hidden
+    padding: 0 190px 25px 0
+    border-bottom: solid 1px #dadada
+    position: relative
+    .request-buttons
+      position: absolute
+      width: 170px
+      top: 0
+      right: 0
+    a
+      box-sizing: border-box
+      display: block
+      padding: 9px 10px 0 36px
+      text-decoration: none
+      border-radius: 20px
+      min-height: 40px
+      font-size: 90%
+
+    a.make-request
+      margin: 15px 0 10px 0
+      text-transform: uppercase
+      font-weight: bold
+      &:link, &:visited
+        background: asset-url("make-request-bg.png", image) no-repeat 12px 12px #3098e0
+        color: #fff
+      &:hover, &:active
+        background-color: #00aedd
+    a.show-on-map
+      margin: 15px 0 10px 0
+      border: solid 1px #ccc
+      &:link, &:visited
+        background: asset-url("show-on-map-bg.png", image) no-repeat 12px 12px transparent
+        color: #333
+      &:hover, &:active
+        background-color: #fff
+
+  table
+    border-collapse: collapse
+    width: 100%
+    color: #333333
+
+    tr
+      th, td
+        padding: 18px 15px
+        border: solid 1px #e5e5e5
+        text-align: left
+      th
+        width: 30%
+      
+      &:nth-child(even)
+        background: #fff
+      &:nth-child(odd)
+        background: #f8f8f8
+      
+    tr.table-heading
+      background: #ebebeb
+      th
+        text-transform: uppercase

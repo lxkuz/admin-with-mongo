@@ -1,0 +1,48 @@
+ru:
+  common: &common
+    create: Создать
+    update: Сохранить
+  helpers:
+    translator_mode_on: Включить режим переводчика
+    translator_mode_off: Выключить режим переводчика
+    logout: Выйти
+    cancel: Отменить
+    add: Добавить
+    delete: Удалить
+    sort: 'Сортировка:'
+    clear: Сбросить
+    edit: Редактировать
+    search: Поиск
+    search_placeholder: Введите текст...
+    show_all: Показать все
+    not_found: "По вашему запросу ничего не найдено."
+    archive: Архив
+    created_at: "Дата создания: "
+    type: "Тип: "
+    buttons: 
+      add_image: Добавить изображение
+      read_more: Подробнее
+    submit:
+      user:
+        <<: *common 
+      settings:
+        <<: *common
+      page_fragment:
+        <<: *common
+      section:
+        <<: *common
+      page:
+        <<: *common
+    sort_by:
+      created_at: Дата создания
+      updated_at: Дата обновления
+      title: А-я
+      name: А-я
+      email: По эл. адресу
+    bool_to:
+      word:
+        if_true: Да
+        if_false: Нет
+      published:
+        if_true: Опубликовано
+        if_false: Не опубликовано

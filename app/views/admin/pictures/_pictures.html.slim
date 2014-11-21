@@ -1,0 +1,16 @@
+- unless target.new_record?
+  .form-group
+    label.control-label.col-lg-2.image = label
+    .col-lg-10.uploader-panel.uploader-picture
+      .elements-container
+        = link_to t('helpers.buttons.add_image'), '#', class: 'add-upload-picture btn btn-info'
+        .elements
+          .upload-picture-template.element
+            = file_field_tag "#{target.class.name.underscore}[pictures][#{ SecureRandom.uuid }]", class: 'image-input'
+            .destroy-upload-picture.btn.btn-danger.btn-xs = t('helpers.delete')
+          - target.pictures.each do |item|
+            .element.uploaded
+              = link_to item.file.to_s do
+                = image_tag item.file.thumb('300x200#').url, { 'data-url' => item.file.url }
+              .buttons
+                = link_to t('helpers.delete'), admin_picture_path(item), class: 'destroy-upload-picture btn btn-danger btn-xs'

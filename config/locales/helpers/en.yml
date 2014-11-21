@@ -1,0 +1,48 @@
+en:
+  common: &common
+    create: Create
+    update: Save
+  helpers:
+    translator_mode_on: Translator mode on
+    translator_mode_off: Translator mode off
+    logout: Logout
+    cancel: Cancel
+    add: add
+    delete: Remove
+    sort: 'Sort:'
+    clear: Clear
+    edit: Edit
+    search: Search
+    search_placeholder: Enter text...
+    show_all: Show all
+    not_found: No results
+    archive: Archive
+    created_at: "Created at: "
+    type: "Type: "
+    buttons: 
+      add_image: Add image
+      read_more: More
+    submit:
+      user:
+        <<: *common
+      settings:
+        <<: *common
+      page_fragment:
+        <<: *common
+      section:
+        <<: *common
+      page:
+        <<: *common
+    sort_by:
+      created_at: Created
+      updated_at: Updated
+      title: A-z
+      name: A-z
+      email: by e-mail
+    bool_to:
+      word:
+        if_true: Yes
+        if_false: No
+      published:
+        if_true: Published
+        if_false: Not published

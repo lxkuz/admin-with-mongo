@@ -1,0 +1,10 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-lg-10
+    h2 = t('admin.page_fragments.index.title')
+    == render_breadcrumbs
+.wrapper.wrapper-content
+  .row
+    .col-lg-12
+      .ibox.float-e-margins
+        .ibox-content
+          == render 'form'

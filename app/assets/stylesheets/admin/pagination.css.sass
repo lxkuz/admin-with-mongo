@@ -1,0 +1,27 @@
+.pagination
+  width: 100%
+  text-align: center
+  margin: 30px 0 0 0
+  font-size: 14px
+
+  .first, .last, .page
+    display: inline-block
+    margin: 0 -4px 0 0
+    
+    a
+      display: block
+
+      &:link, &:visited
+        border: 1px solid #e7eaec
+        padding: 6px 12px
+        text-decoration: none
+        color: #a2a2a2
+      &:hover, &:active
+        border: solid 1px #d2d2d2
+        color: #595b5f
+        transition: all 0.2s ease
+
+    &.current
+      padding: 6px 12px
+      border: solid 1px #d2d2d2
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15) inset

@@ -1,0 +1,59 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-sm-10
+    h2 = t('.title')
+    == render_breadcrumbs
+.wrapper.wrapper-content
+  .row
+    .col-lg-12
+      .wrapper.wrapper-content.animated.fadeInUp
+        .ibox
+          .ibox-header
+            .row.m-b-sm.m-t-sm
+              .col-md-4
+                = form_tag nil, class: 'input-group', method: :get do
+                  = text_field_tag :query, nil, value: params[:query], placeholder: t('helpers.search_placeholder'), class: 'input input-sm form-control'
+                  span.input-group-btn
+                    = submit_tag t('helpers.search'), class: 'button btn btn-sm btn-primary'
+              .col-md-5.ordering-list
+                strong = t('helpers.sort')
+                | &nbsp
+                .btn-group
+                  == render_sort_button :email
+                  == render_sort_button :created_at
+                  == render_sort_button :updated_at
+              .col-md-3
+                .ibox-tools 
+                  = link_to new_admin_user_path, class: 'btn btn-primary btn-sm' do
+                    i.fa.fa-plus
+                    | &nbsp
+                    = t('helpers.add')
+                .ibox-tools 
+                  = link_to admin_users_path, class: 'btn btn-white btn-sm' do
+                    i.fa.fa-refresh
+                    | &nbsp
+                    = t('helpers.clear')
+          .ibox-content
+            .project-list
+              - if @users.blank?
+                = t('helpers.not_found')
+              - else
+                table.table.table-hover
+                  tbody
+                    - @users.each do |user|
+                      tr
+                        td.project-title
+                          = link_to edit_admin_user_path(user) do
+                            = user.email
+                          br
+                          small = l user.c_at, format: :short
+                        td.project-actions
+                          = link_to edit_admin_user_path(user), class: 'btn btn-white btn-sm' do
+                            i.fa.fa-pencil
+                            | &nbsp
+                            = t('helpers.edit')
+                          | &nbsp
+                          = link_to admin_user_path(user), class: 'btn btn-white btn-sm', method: :delete, data: { confirm: t('messages.destroy_confirm') } do
+                            i.fa.fa-trash
+                            | &nbsp
+                            = t('helpers.delete')
+            == paginate @users, views_prefix: 'admin/'

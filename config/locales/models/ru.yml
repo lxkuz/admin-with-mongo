@@ -1,0 +1,37 @@
+ru:
+  sections: &menu_item
+    breadcrumbs: Отображать в хлебных крошках
+    title: Название
+    published: Опубликовать
+    parent_id: ID родитеского элемента
+    root: Корневой элемент
+  models:
+    page: Страница
+  mongoid:
+    attributes:
+      user:
+        email: Электронный адрес
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+      settings:
+        title: Заголовок сайта
+        subtitle: Подзаголовок сайта
+        contact_email: Контактный эл. адрес
+        image: Логотип сайта
+      page_fragment:
+        key: Ключ
+        name: Заголовок
+        content: Содержание
+        hidden: опубликовано
+      section:
+        <<: *menu_item
+        key: Ключ
+        url: Адрес ссылки
+        intro: Краткое описание
+        css_class: CSS-класс ссылки
+      page:
+        <<: *menu_item
+        css_class: CSS-класс ссылки
+        title: Заголовок
+        intro: Краткое описание
+        content: Содержание

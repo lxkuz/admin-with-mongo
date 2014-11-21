@@ -1,0 +1,122 @@
+.stockman-uploader
+  position: relative
+
+  input[type='file']
+    display: none
+  img
+    max-height: 150px
+  .drag-n-drop
+    margin: 0 20px 0 0
+    padding: 4px
+    float: left
+    width: 200px
+    border: 1px solid #DDD
+    border-radius: 4px
+    background-color: #FFF
+    text-align: center
+    line-height: 26px
+    cursor: pointer
+    div
+      background: #EEE
+      color: #AAA
+      height: 140px
+      padding: 35px 15px
+
+
+  .overlay
+    display: none
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1000
+    background-color: rgba(255, 255, 255, 0.3)
+
+  &.can-drop
+    .drag-n-drop
+      background: #f7ecb5
+      color: #c9302c
+    .overlay
+      display: block
+
+.stockman .drag-n-drop.hover, .stockman .drag-n-drop:hover
+  background: #dddddd
+
+.stockman-gallery-uploader, .stockman-files-uploader
+  padding-bottom: 55px
+
+  .gallery
+    overflow-y: auto
+    height: 160px
+    margin-left: 221px
+
+    .s-gallery-image
+      position: relative
+      display: inline-block
+      margin-right: 20px
+
+      .close-btn
+        position: absolute
+        right: 10px
+        top: 5px
+        font-size: 15px
+        cursor: pointer
+        i
+          background: #fff
+          border-radius: 50%
+
+.stockman-image-uploader
+  min-height: 200px
+
+.stockman-fancy-gallery
+  a
+    display: inline-block
+    margin: 10px 0 10px 20px
+    &:first-child
+      margin-left: 0
+
+.stockman-files-uploader
+  .files-container
+    overflow-y: auto
+    height: 160px
+    .s-file-item
+      display: inline-block
+      clear: both
+      position: relative
+      a
+        margin-right: 20px
+        min-width: 85px
+        height: 120px
+        display: block
+        text-decoration: none
+        font-size: 30px
+        padding: 65px 0 0 42px
+        color: #157efb
+        background: image_url("stockman/file-icon.png") no-repeat
+        cursor: pointer
+
+      .close-btn
+        position: absolute
+        left: 77px
+        top: 8px
+        font-size: 15px
+        cursor: pointer
+        i
+          background: #fff
+          border-radius: 50%
+
+.dropdown-menu.s-files-container
+  padding: 10px
+
+  .sending
+    width: 100px
+    height: 50px
+    background-image: image_url("spinner.gif")
+
+
+
+
+
+
+

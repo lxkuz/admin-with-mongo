@@ -1,0 +1,9 @@
+h3 = "Добро пожаловать на #{@settings.title} #{@settings.subtitle}" if @settings.title.present?
+p Для доступа к административной панели вам необходимо авторизоваться
+
+= simple_form_for resource, as: resource_name, url: session_path(resource_name), wrapper: :blank_page_form do |f| 
+  .form-inputs
+    = f.input :email, required: false, autofocus: true
+    = f.input :password, required: false
+  .form-actions
+    = f.button :submit, 'Войти', class: 'btn btn-primary block full-width m-b'

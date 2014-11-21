@@ -1,0 +1,10 @@
+= simple_form_for [:admin, @page_fragment], html: { class: 'form-horizontal localized-form' } do |f|
+  .form-inputs
+    == render 'admin/helpers/locale_selectors'
+    = f.input :content, as: :localized_imperavi
+    .hr-line-dashed
+  .form-group
+    .col-sm-4.col-sm-offset-2
+      = link_to t('helpers.cancel'), admin_page_fragments_path, class: 'btn btn-white'
+      | &nbsp
+      = f.button :submit

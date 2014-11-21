@@ -1,0 +1,46 @@
+ru:
+  edit: &edit
+    edit:
+      title: Редактировать
+    update:
+      title: Редактировать
+  common: &common
+    new:
+      title: Создать
+    create:
+      title: Создать
+    <<: *edit
+  admin:
+    dashboard:
+      index:
+        title: Панель управления
+    breadcrumbs:
+      root: Панель управления 
+    users:
+      index:
+        title: Пользователи
+      <<: *common
+    settings:
+      show:
+        title: Настройки
+      <<: *common
+    page_fragments:
+      index:
+        title: Статические фрагменты
+      <<: *edit
+    sections:
+      index:
+        title: Структура портала
+        title_item: Разделы
+        add_section: Добавить раздел
+        add_page: Добавить страницу
+        add_reference: Добавить ссылку
+        add_child_page: Добавить подстраницу
+      <<: *common
+    pages:
+      index:
+        title: Страницы
+      <<: *common
+      form:
+        add_chart: Добавить график
+        children: Подстраницы

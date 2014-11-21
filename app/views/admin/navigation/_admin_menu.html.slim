@@ -1,0 +1,32 @@
+ul#side-menu.nav
+  li.nav-header
+    = link_to root_path, class: 'logo' do
+      - if @settings.image_stored?
+        = image_tag @settings.image.thumb('50x50#').url, height: 50, width: 50
+      div.type == @settings.title
+      div.region == @settings.subtitle
+
+  = menu_list_item(admin_dashboard_path) do
+    = link_to admin_dashboard_path do
+      i.fa.fa.fa-th-large
+      span.nav-label = t('admin.dashboard.index.title')
+
+  = menu_list_item admin_sections_path do
+    = link_to admin_sections_path do
+      i.fa.fa-university
+      span.nav-label = t('admin.sections.index.title')
+
+  = menu_list_item admin_page_fragments_path do
+    = link_to admin_page_fragments_path do
+      i.fa.fa-newspaper-o
+      span.nav-label = t('admin.page_fragments.index.title')
+
+  = menu_list_item admin_users_path do
+    = link_to admin_users_path do
+      i.fa.fa-users
+      span.nav-label = t('admin.users.index.title')
+      
+  = menu_list_item admin_settings_path do
+    = link_to admin_settings_path do
+      i.fa.fa-cog
+      span.nav-label = t('admin.settings.show.title')

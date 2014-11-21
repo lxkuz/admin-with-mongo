@@ -1,0 +1,23 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-sm-10
+    h2 = t('.title')
+    == render_breadcrumbs
+.wrapper.wrapper-content
+  .row
+    .col-lg-12
+      .wrapper.wrapper-content.animated.fadeInUp
+        .ibox
+          .ibox-title
+            p Cтатические фрагменты доступны только для редактирование
+          .ibox-content
+            .project-list
+              table.table.table-hover
+                tbody
+                  - @page_fragments.each do |page_fragment|
+                    tr
+                      td.project-title = page_fragment.name
+                      td.project-actions = link_to edit_admin_page_fragment_path(page_fragment), class: 'btn btn-white btn-sm' do
+                        i.fa.fa-pencil
+                        | &nbsp
+                        = t('helpers.edit')
+            == paginate @page_fragments, views_prefix: 'admin/'

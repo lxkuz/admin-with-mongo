@@ -1,0 +1,27 @@
+if kind == "section"
+  i.pull-left.link-type.fa.fa-list-alt  
+if kind == "reference"
+  i.pull-left.link-type.fa.fa-external-link
+if kind == "page"
+  i.pull-left.link-type.fa.fa.fa-file-o
+label.pull-left.menu-item-label(class=published ? '' : 'red-label')= _.str.truncate(name, 60)
+if node.attributes.url
+    a.reference(href=node.attributes.url)= node.attributes.url
+.btn-toolbar
+    .btn-group
+        - var destroyDisabled = destroyDisabled || null;
+        - var editUrl = kind == "page" ? urlFor({type: "Page", id: node.attributes.page_id.$oid}, {method: 'edit'}) : urlFor(node, {method: 'edit'}) ;
+        a.btn.btn-xs.btn-success(href=editUrl)
+            i.fa.fa-pencil
+        a.btn.btn-xs.btn-danger.destroy-btn(href='#', disabled=destroyDisabled)
+            i.fa.fa-trash
+        if kind == "section"
+            a.btn.btn-xs.btn-info.dropdown-toggle(data-toggle='dropdown',href='#')
+                i.fa.fa-list
+            ul.dropdown-menu
+                li
+                    a(href=urlFor('section', {method: 'new', params: {parent_id: node.id}}))= t('admin.sections.index.add_section')
+                li
+                    a(href=urlFor('page', {method: 'new', params: {parent_id: node.id}}))= t('admin.sections.index.add_page')
+                li
+                    a(href=urlFor('section', {method: 'new', params: {parent_id: node.id, reference: true}}))= t('admin.sections.index.add_reference')

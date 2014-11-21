@@ -1,0 +1,99 @@
+body .nav > li > a.logo
+  padding: 0px
+  text-align: center
+  &:hover
+    background-color: transparent
+  img
+    height: 50px
+body 
+  .nav-header
+    background: image_url('admin/header-profile.png') no-repeat center
+  .ibox-tools a
+    color: inherit
+.ordering-list
+  line-height: 30px
+.ibox-header
+  background: #fff 
+  background-color: #fff
+  border-color: #e7eaec
+  border-image: none
+  border-style: solid solid none
+  border-width: 4px 0px 0
+  color: inherit
+  margin-bottom: 0
+  padding: 14px 15px 7px
+.latest-items
+  .item
+    display: block
+    padding-bottom: 10px
+    padding-top: 10px
+    border-top: 1px dashed #e7eaec
+    strong 
+      color: #676a6c
+    p 
+      color: #676a6c
+      margin: 10px 0
+    &:first-child
+      padding-top: 0
+      border-top: none
+.chart-attendance
+  .chart
+    canvas
+.reference-item-label
+  .link
+    margin-left: 10px
+.menu-tree-container
+  .jqtree-element
+    margin: 10px 0
+    .link-type
+      margin-top: 4px
+  .btn-group
+    margin-left: 10px 
+  .reference
+    float: left
+    margin: 0 10px
+    display: inline-block
+#side-menu
+  .nav-second-level
+    display: none
+    &.collapse.in
+      display: block
+    &.collapsing
+      display: block
+.mini-navbar
+  .nav-header
+    .type, .region
+      display: none
+    .logo
+      padding: 20px 0
+      img
+        height: 30px
+  #side-menu
+    >li
+      &:hover
+        ul
+          display: none !important
+    >li.active
+      &:hover
+        ul
+          display: block !important
+
+#page-wrapper
+  z-index: 0
+body:not(.fixed-sidebar).mini-navbar #side-menu.nav li:hover > .nav-second-level,
+.mini-navbar #side-menu.nav li:focus > .nav-second-level 
+  display: block
+  border-radius: 0 2px 2px 0
+  min-width: 140px
+  height: auto
+@media (max-width: 768px)
+  .navbar-static-side
+    display: none
+  body.mini-navbar
+    .navbar-static-side
+      display: block  
+.translate-selectors
+  display: none
+body.translate-on
+  .translate-selectors
+    display: block

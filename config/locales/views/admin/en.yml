@@ -1,0 +1,45 @@
+en:
+  edit: &edit
+    edit:
+      title: Edit
+    update:
+      title: Edit
+  common: &common
+    new:
+      title: Create
+    create:
+      title: Create
+    <<: *edit
+  admin:
+    dashboard:
+      index:
+        title: Dashboard
+    breadcrumbs:
+      root: Dashboard
+    users:
+      index:
+        title: Users
+      <<: *common
+    settings:
+      show:
+        title: Settings
+      <<: *common
+    page_fragments:
+      index:
+        title: Page fragments
+      <<: *edit
+    sections:
+      index:
+        title: Portal structure
+        title_item: Sections
+        add_section: Add section
+        add_page: Add page
+        add_reference: Add reference
+        add_child_page: Add subpage
+    pages:
+      index:
+        title: Pages
+      <<: *common
+      form:
+        add_chart: Add graph
+        children: Subpages

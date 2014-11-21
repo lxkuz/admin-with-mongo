@@ -1,0 +1,23 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-lg-10
+    h2 = t('admin.settings.show.title')
+    == render_breadcrumbs
+.wrapper.wrapper-content
+  .row
+    .col-lg-12
+      .ibox.float-e-margins
+        .ibox-content
+          = simple_form_for [:admin, @settings], url: admin_settings_path, html: { class: 'form-horizontal localized-form' }, wrapper_mappings: { boolean: :horizontal_boolean } do |f|
+            .form-inputs
+              == render 'admin/helpers/locale_selectors'
+              = f.input :title, as: :localized_string
+              = f.input :subtitle, as: :localized_string
+              .hr-line-dashed
+              = f.input :contact_email
+              .hr-line-dashed
+              = f.input :image, as: :image
+              .hr-line-dashed
+            .form-group
+              .col-sm-4.col-sm-offset-2
+                | &nbsp
+                = f.button :submit

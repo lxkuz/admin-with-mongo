@@ -1,0 +1,36 @@
+en:
+  section: &menu_item
+    title: Name
+    published: Publish on main menu
+    parent_id: ID of parent element
+    root: Root element
+  models:
+    page: Page
+  mongoid:
+    attributes:
+      user:
+        email: E-mail
+        password: Password
+        password_confirmation: Password confirmation
+      settings:
+        title: Site title
+        subtitle: Site subtitle
+        contact_email: Contact e-mail
+        image: Site logo
+      page_fragment:
+        key: Key
+        name: Name
+        content: Content
+        hidden: published
+      section:
+        <<: *menu_item
+        key: Key
+        url: Url
+        intro: Short description
+        css_class: url CSS-class
+      page:
+        <<: *menu_item
+        css_class: url CSS-class
+        title: Title
+        intro: Intro
+        content: Content

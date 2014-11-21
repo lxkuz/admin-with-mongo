@@ -1,0 +1,80 @@
+.posts-range-filter
+  border-bottom: dotted 1px #bbb
+  padding: 0 0 20px 0
+  div
+    display: inline-block
+    margin: 0 4px 0 0
+  .date
+    color: #444
+    input
+      margin: 0 0 0 4px
+      background: #fff
+      padding: 4px 10px
+      border: solid 1px #8ccced
+      border-radius: 2px
+  .submit
+    .btn-submit
+      background: #3098df
+      border: solid 1px #47a7e9
+      border-radius: 2px
+      padding: 4px 10px
+      color: #fff
+      &:hover
+        background: #106794
+        border: solid 1px #106794
+        transition: all 0.3s ease
+  .archive
+    margin: 0 0 0 10px
+    padding: 0 0 0 18px
+    border-left: solid 1px #bbb
+  .category
+    height: 28px
+    margin: 0 0 0 8px
+    .chosen-container, .chosen-container-single
+      width: 160px !important
+      .chosen-single
+        margin: -4px 0 0 0
+        border: solid 1px #8ccced
+        border-radius: 2px
+        background: #fff
+        box-shadow: none
+        height: 27px
+      .chosen-drop
+        border-radius: 0
+        border: solid 1px #8ccced
+        border-top: 0
+        .chosen-search
+          display: none
+    .chosen-container-active
+      .chosen-single
+        box-shadow: none
+
+/* latest-posts partial */
+.latest-posts
+  border-top: solid 1px #ddd
+  h4
+    a
+      text-decoration: none
+      &:link, &:visited
+      &:hover, &:active
+        color: #3098df
+
+.post-summary
+  padding-top: 20px
+  .date
+    color: #333333
+    font-size: 12px
+    float: right
+    font-weight: bold
+    span
+      color: #aaa
+      font-weight: normal
+  .category
+    float: right
+    font-size: 12px
+    margin-right: 20px
+    span
+      color: #aaa
+      font-weight: normal
+.posts-container 
+  padding-top: 20px // отступ от блока фильтров

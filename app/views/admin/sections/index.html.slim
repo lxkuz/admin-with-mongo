@@ -1,0 +1,25 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-sm-10
+    h2 = t('.title')
+    == render_breadcrumbs
+.wrapper.wrapper-content
+  .row
+    .col-lg-12
+      .ibox
+        .ibox-title
+          .add-section
+            = link_to new_admin_section_path, class: 'btn btn-primary btn-xs' do
+              i.icon-plus.icon-white
+              = t('admin.sections.index.add_section')
+            | &nbsp
+            = link_to new_admin_page_path, class: 'btn btn-primary btn-xs' do
+              i.icon-plus.icon-white
+              = t('admin.sections.index.add_page')
+            | &nbsp
+            = link_to new_admin_section_path(reference: true), class: 'btn btn-primary btn-xs' do
+              i.icon-plus.icon-white
+              = t('admin.sections.index.add_reference')
+            | &nbsp
+        .ibox-content
+          .menu-tree-container data-url-section=admin_sections_url data-url-page=admin_pages_url data-root=Section.root.id
+
