@@ -46,3 +46,6 @@ ru:
       published:
         if_true: Опубликовано
         if_false: Не опубликовано
+    locales:
+      ru: Русский
+      en: English
