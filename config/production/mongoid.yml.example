@@ -1,7 +1,7 @@
 production:
   sessions:
     default:
-      database: admin-with-mongo
+      database: 'admin-'with-mongo'
       hosts:
         - localhost:27017
       username: 'admin-with-mongo'
