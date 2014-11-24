@@ -22,7 +22,7 @@ set :scm, :git
 # Default value for :pty is false
 # set :pty, true
 
-set :linked_files, %w(config/config.yml config/mongoid.yml config/secrets.yml config/unicorn.rb)
+set :linked_files, %w(config/mongoid.yml config/secrets.yml config/unicorn.rb)
 
 set :linked_dirs, %w(log public/assets public/uploads)
 
