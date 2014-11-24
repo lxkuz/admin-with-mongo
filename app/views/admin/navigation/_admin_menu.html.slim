@@ -2,7 +2,7 @@ ul#side-menu.nav
   li.nav-header
     = link_to root_path, class: 'logo' do
       - if @settings.image_stored?
-        = image_tag @settings.image.thumb('50x50#').url, height: 50, width: 50
+        = image_tag @settings.image.thumb('50x50').url
       div.type == @settings.title
       div.region == @settings.subtitle
 
