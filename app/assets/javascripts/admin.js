@@ -14,9 +14,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require_tree ./common
 //= require_tree ../../../vendor/assets/javascripts/common
-//= require_tree ./templates
 //= require_tree ./admin/imperavi
-//= require_tree ./admin
 //= require_tree ../../../vendor/assets/javascripts/admin
+//= require ./common/initializer
+//= require_tree ./admin/initializers
+//= require_tree ./common
+//= require_tree ./templates
+//= require_tree ./admin
