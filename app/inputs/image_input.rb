@@ -4,7 +4,7 @@ class ImageInput < SimpleForm::Inputs::FileInput
     out = ''
     if object.send(attribute_name)
       out << template.link_to(object.send(attribute_name).url, class: 'img-thumbnail') do
-        template.image_tag(object.send(attribute_name).thumb('110x90#').url)
+        template.image_tag(object.send(attribute_name).thumb('110x90').url)
       end
     end
     out << template.content_tag(:div)
