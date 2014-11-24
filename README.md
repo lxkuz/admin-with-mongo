@@ -52,13 +52,12 @@
         sudo apt-get install elasticsearch
         sudo service elasticsearch start
         
-        Installing Elasticsearch Morphology plugin
+<!--         Installing Elasticsearch Morphology plugin
 
         ! Execute from /usr/share/elasticsearch
         bin/plugin -install analysis-morphology -url http://dl.bintray.com/content/imotov/elasticsearch-plugins/org/elasticsearch/elasticsearch-analysis-morphology/1.2.0/elasticsearch-analysis-morphology-1.2.0.zip
         sudo service elasticsearch restart
-
-        ! Copy config from config/elasticsearch.yml.example to /etc/elasticsearch/elasticsearch.yml.example
+ -->
         ! Update indexes from project directory
         bundle exec rake environment elasticsearch:import:all
 
