@@ -1,4 +1,7 @@
+require 'singleton'
+
 class Settings
+  include Singleton
   include Mongoid::Document
   include ImageUploading
 
@@ -7,10 +10,6 @@ class Settings
   field :subtitle, localize: true, default: ''
 
   def self.instance
-    @instance ||= Settings.first || Settings.new
-  end
-
-  private def new
-    super
+    @instance ||= first || new
   end
 end
